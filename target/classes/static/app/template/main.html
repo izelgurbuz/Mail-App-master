@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="row p-5">
+        <button class="btn btn-outline-success mb-3" ng-click="newMail()"><i class="fa fa-plus"></i> New Mail</button>
+        <legend>List of Mails</legend>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>SENDER</th>
+                <th>HEADER</th>
+                <th>DATE</th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="mail in mails | limitTo:10:(data.currentPage -1) * 10"
+                class="" ng-class="{'p-3 mb-2 bg-info text-white':mail.read===true,'p-3 mb-2 bg-dark text-white':mail.read===false}" ng-click="select(mail, $index)">
+                <td>{{$index + 1}}</td>
+                <td>{{mail.sender.name}}</td>
+                <td>{{mail.contentHeader}}</td>
+                <td>{{mail.date | date:'medium'}}</td>
+                <td>
+                    <i class="fa fa-trash i-danger mr-2" ng-click="remove(mail,$index)"></i>
+                    <i class="fa fa-plus i-success ml-2" ng-click="open(mail)"></i>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <ul class="float-right" uib-pagination total-items="mails.length" ng-model="data.currentPage"></ul>
+    </div>
+
+</div>
+
+
+<style>
+    .mail-row {
+        cursor: pointer;
+    }
+
+    .i-danger {
+        color: #dc3545;
+    }
+
+    .i-success {
+        color: #28a745;
+    }
+
+    .colored {
+        color: white;
+        background-color: lightblue;
+        padding: 20px;
+        font-family: "Courier New";
+    }
+</style>

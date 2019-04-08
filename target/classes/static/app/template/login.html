@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form class="text-center border border-light p-5">
+                <p class="h1 mb-4">WELCOME MY APPLICATION</p>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form  class="text-center border border-light p-5">
+                <p class="h4 mb-4">LOG IN PAGE</p>
+                <!-- Email -->
+                <label for="name">USER NAME</label>
+                <input type="text" id="name" aria-describedby="nameHelp" class="form-control" placeholder="NAME"
+                       ng-model="userName">
+
+                <!-- Password -->
+
+                <label for="password">USER PASSWORD</label>
+                <input type="password" id="password" aria-describedby="passwordHelp" class="form-control"
+                       placeholder="PASSWORD"
+                       ng-model="userPassword">
+
+    <!-- Sign in button -->
+                <button mdbBtn color="info" block="true" class="my-4" type="submit" ng-click="submit()">Sign in</button>
+                <br>
+                <a href="/forgot">I forgot my password</a>
+            </form>
+        </div>
+    </div>
+</body>

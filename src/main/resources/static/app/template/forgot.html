@@ -1,0 +1,47 @@
+<body>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form class="text-center border border-light p-5">
+            <p class="h1 mb-4">WELCOME MY APPLICATION</p>
+        </form>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form class="text-center border border-light p-5">
+            <p class="h4 mb-4">FORGOT PASSWORD PAGE</p>
+            <!-- Email -->
+            <label for="username">USER NAME</label>
+            <input type="text" id="username" aria-describedby="usernameHelp" class="form-control"
+                   placeholder="Enter Username"
+                   ng-model="username">
+            <i class="fa fa-arrow-right" ng-click="check()">Check</i>
+            <br>
+            <div>
+                <label for="answer" ng-model="question">{{user1.question}}</label>
+                <input type="text" id="answer" aria-describedby="answerHelp" class="form-control"
+                       placeholder="your answer"
+                       ng-model="answer">
+
+                <!-- Password -->
+
+                <label for="newPassword">USER PASSWORD</label>
+                <input type="password" id="newPassword" aria-describedby="newPasswordHelp" class="form-control"
+                       placeholder="New Password"
+                       ng-model="newPassword">
+                <label for="confirmPassword">CONFIRM PASSWORD</label>
+                <input type="password" id="confirmPassword" aria-describedby="confirmPasswordHelp" class="form-control"
+                       placeholder="Confirm Password"
+                       ng-model="confirmPassword">
+                <!-- Sign in button -->
+                <button mdbBtn color="info" block="true" class="my-4" type="submit" ng-click="confirm()">Confirm
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>
